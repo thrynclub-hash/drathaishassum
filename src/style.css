@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-sans: "Manrope", "Segoe UI", sans-serif;
+
+  --color-cream: #faf6f0;
+  --color-cream-dark: #f2ead9;
+  --color-ink: #2a2420;
+  --color-ink-soft: #55493d;
+  --color-gold: #b8925a;
+  --color-gold-dark: #96733f;
+  --color-gold-light: #e4d3b0;
+  --color-sage: #eef0e6;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background-color: var(--color-cream);
+  }
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-gold)] px-7 py-3.5 text-sm font-semibold tracking-wide text-white transition hover:bg-[var(--color-gold-dark)] hover:shadow-lg hover:-translate-y-0.5;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-[var(--color-gold)] px-7 py-3.5 text-sm font-semibold tracking-wide text-[var(--color-gold-dark)] transition hover:bg-[var(--color-gold)] hover:text-white;
+  }
+  .section-label {
+    @apply text-xs font-semibold uppercase tracking-[0.25em] text-[var(--color-gold-dark)];
+  }
+  .nav-link {
+    @apply text-sm font-medium text-[var(--color-ink-soft)] transition hover:text-[var(--color-gold-dark)];
+  }
+  .card {
+    @apply rounded-2xl border border-[var(--color-gold-light)]/60 bg-white/70 p-6 shadow-sm transition hover:shadow-md hover:-translate-y-0.5;
+  }
+}
